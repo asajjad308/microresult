@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "MicroResult.TestApi/1.0.0": {
+        "dependencies": {
+          "MicroResult": "1.0.0"
+        },
+        "runtime": {
+          "MicroResult.TestApi.dll": {}
+        }
+      },
+      "MicroResult/1.0.0": {
+        "runtime": {
+          "lib/net10.0/MicroResult.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MicroResult.TestApi/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MicroResult/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YlRpBqctZDcHEa/C9Q+2W+7hCbJYlCSEeWhW7PaMUVgBpgflVupngI7qKUd+oirIcDEpSznaQUCP9plwl4sxtg==",
+      "path": "microresult/1.0.0",
+      "hashPath": "microresult.1.0.0.nupkg.sha512"
+    }
+  }
+}

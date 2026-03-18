@@ -1,0 +1,27 @@
+@MicroResult_TestApi_Host = http://localhost:5074
+
+GET {{MicroResult_TestApi_Host}}/
+
+###
+
+GET {{MicroResult_TestApi_Host}}/users/1
+
+###
+
+GET {{MicroResult_TestApi_Host}}/users/99
+
+###
+
+GET {{MicroResult_TestApi_Host}}/users/1/dto
+
+###
+
+GET {{MicroResult_TestApi_Host}}/users/2/dto
+
+###
+
+GET {{MicroResult_TestApi_Host}}/users/3/dto
+
+###
+
+GET {{MicroResult_TestApi_Host}}/users/4/dto

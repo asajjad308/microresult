@@ -36,6 +36,13 @@
     <Compile Remove="Examples.cs" />
     <Compile Remove="HttpExtensions.cs" />
     <Compile Remove="HttpExtensions.optional.cs" />
+    <Compile Remove="MicroResult.TestApi\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="MicroResult.TestApi\**\*" />
+    <Content Remove="MicroResult.TestApi\**\*" />
+    <EmbeddedResource Remove="MicroResult.TestApi\**\*" />
   </ItemGroup>
 
   <ItemGroup>

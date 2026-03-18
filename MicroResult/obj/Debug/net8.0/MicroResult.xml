@@ -9,10 +9,74 @@
             Represents an error with a code and message.
             </summary>
         </member>
+        <member name="P:MicroResult.Error.Code">
+            <summary>
+            Gets the machine-readable error code.
+            </summary>
+        </member>
+        <member name="P:MicroResult.Error.Message">
+            <summary>
+            Gets the human-readable error message.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Error.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new error value.
+            </summary>
+            <param name="code">The machine-readable error code.</param>
+            <param name="message">The human-readable error message.</param>
+        </member>
+        <member name="M:MicroResult.Error.ToString">
+            <summary>
+            Returns the error as a readable string.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Error.Equals(System.Object)">
+            <summary>
+            Determines whether this error equals another object.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Error.GetHashCode">
+            <summary>
+            Returns a hash code for this error.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Error.op_Equality(MicroResult.Error,MicroResult.Error)">
+            <summary>
+            Compares two errors for equality.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Error.op_Inequality(MicroResult.Error,MicroResult.Error)">
+            <summary>
+            Compares two errors for inequality.
+            </summary>
+        </member>
         <member name="T:MicroResult.Result`1">
             <summary>
             A lightweight, zero-allocation Result type for functional error handling.
             </summary>
+        </member>
+        <member name="P:MicroResult.Result`1.IsSuccess">
+            <summary>
+            Gets a value indicating whether the result represents success.
+            </summary>
+        </member>
+        <member name="P:MicroResult.Result`1.IsFailure">
+            <summary>
+            Gets a value indicating whether the result represents failure.
+            </summary>
+        </member>
+        <member name="P:MicroResult.Result`1.Value">
+            <summary>
+            Gets the successful value.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when the result is a failure.</exception>
+        </member>
+        <member name="P:MicroResult.Result`1.Error">
+            <summary>
+            Gets the error value.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when the result is a success.</exception>
         </member>
         <member name="M:MicroResult.Result`1.Success(`0)">
             <summary>
@@ -52,6 +116,26 @@
         <member name="M:MicroResult.Result`1.Ensure(System.Func{`0,System.Boolean},MicroResult.Error)">
             <summary>
             Applies a predicate check; if fails, returns the given error.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Result`1.Equals(System.Object)">
+            <summary>
+            Determines whether this result equals another object.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Result`1.GetHashCode">
+            <summary>
+            Returns a hash code for this result.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Result`1.op_Equality(MicroResult.Result{`0},MicroResult.Result{`0})">
+            <summary>
+            Compares two results for equality.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Result`1.op_Inequality(MicroResult.Result{`0},MicroResult.Result{`0})">
+            <summary>
+            Compares two results for inequality.
             </summary>
         </member>
         <member name="T:MicroResult.ResultExtensions">

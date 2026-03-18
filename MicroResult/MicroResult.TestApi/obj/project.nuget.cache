@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "zttotLiBDz8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Lenovo\\Desktop\\nugets\\MicroResult\\MicroResult.TestApi\\MicroResult.TestApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microresult\\1.0.0\\microresult.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyDescriptionAttribute(("Tiny zero-dependency Result{T} and Error structs for clear exception-free control" +
     " flow in modern .NET applications."))]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57bf1bdc1875a7b7a9933149f9fa9cdc42afa443")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+92c3c1120f69db733e403c59f459b3c8402905b9")]
 [assembly: System.Reflection.AssemblyProductAttribute("MicroResult")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MicroResult")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
