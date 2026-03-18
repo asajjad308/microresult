@@ -1,6 +1,13 @@
+C:\Users\Lenovo\Desktop\nugets\microresult\bin\Debug\netstandard2.0\MicroResult.deps.json
+C:\Users\Lenovo\Desktop\nugets\microresult\bin\Debug\netstandard2.0\MicroResult.dll
+C:\Users\Lenovo\Desktop\nugets\microresult\bin\Debug\netstandard2.0\MicroResult.pdb
+C:\Users\Lenovo\Desktop\nugets\microresult\bin\Debug\netstandard2.0\MicroResult.xml
 C:\Users\Lenovo\Desktop\nugets\microresult\obj\Debug\netstandard2.0\MicroResult.csproj.AssemblyReference.cache
 C:\Users\Lenovo\Desktop\nugets\microresult\obj\Debug\netstandard2.0\MicroResult.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Lenovo\Desktop\nugets\microresult\obj\Debug\netstandard2.0\MicroResult.AssemblyInfoInputs.cache
 C:\Users\Lenovo\Desktop\nugets\microresult\obj\Debug\netstandard2.0\MicroResult.AssemblyInfo.cs
 C:\Users\Lenovo\Desktop\nugets\microresult\obj\Debug\netstandard2.0\MicroResult.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\Desktop\nugets\microresult\obj\Debug\netstandard2.0\MicroResult.sourcelink.json
+C:\Users\Lenovo\Desktop\nugets\microresult\obj\Debug\netstandard2.0\MicroResult.dll
+C:\Users\Lenovo\Desktop\nugets\microresult\obj\Debug\netstandard2.0\MicroResult.xml
+C:\Users\Lenovo\Desktop\nugets\microresult\obj\Debug\netstandard2.0\MicroResult.pdb

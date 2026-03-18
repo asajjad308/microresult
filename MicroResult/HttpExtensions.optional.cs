@@ -1,11 +1,17 @@
-#if NET8_0 || NET10_0
+// Optional HttpExtensions for ASP.NET Core / Minimal APIs
+// Add this file to your project if you want to use MicroResult with Minimal APIs
+// Requires: Microsoft.AspNetCore.Http.Abstractions NuGet package
+
+#if NETCOREAPP3_1_OR_GREATER
+
 using System;
 using Microsoft.AspNetCore.Http;
 
 namespace MicroResult;
 
 /// <summary>
-/// ASP.NET Core integration for Result{T}.
+/// Optional ASP.NET Core integration for Result{T}.
+/// Only include this in projects targeting .NET 6 or higher with ASP.NET Core.
 /// </summary>
 public static class HttpExtensions
 {
@@ -32,4 +38,5 @@ public static class HttpExtensions
         return result.Match(onSuccess, onFailure);
     }
 }
+
 #endif

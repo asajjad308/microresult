@@ -25,15 +25,12 @@
     <PublishReadyToRun>true</PublishReadyToRun>
   </PropertyGroup>
 
-  <!-- Exclude test and example files from compilation -->
+  <!-- Exclude test, example, and optional HTTP extension files from compilation -->
   <ItemGroup>
     <Compile Remove="MicroResult.Tests.cs" />
     <Compile Remove="Examples.cs" />
-  </ItemGroup>
-
-  <!-- ASP.NET Core dependency for HttpExtensions (net8.0 and net10.0 only) -->
-  <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
-    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <Compile Remove="HttpExtensions.cs" />
+    <Compile Remove="HttpExtensions.optional.cs" />
   </ItemGroup>
 
 </Project>

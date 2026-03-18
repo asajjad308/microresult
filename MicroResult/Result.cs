@@ -113,7 +113,24 @@ public readonly struct Result<T>
         return IsSuccess ? EqualityComparer<T>.Default.Equals(_value, other._value) : _error.Equals(other._error);
     }
 
-    public override int GetHashCode() => IsSuccess ? HashCode.Combine(_value) : HashCode.Combine(_error);
+    public override int GetHashCode()
+    {
+#if NET6_0_OR_GREATER
+        return IsSuccess ? HashCode.Combine(_value) : HashCode.Combine(_error);
+#else
+        unchecked
+        {
+            if (IsSuccess)
+            {
+                return 17 * 31 + EqualityComparer<T>.Default.GetHashCode(_value);
+            }
+            else
+            {
+                return 17 * 31 + _error.GetHashCode();
+            }
+        }
+#endif
+    }
 
     public static bool operator ==(Result<T> left, Result<T> right) => left.Equals(right);
     public static bool operator !=(Result<T> left, Result<T> right) => !left.Equals(right);
