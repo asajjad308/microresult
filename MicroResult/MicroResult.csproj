@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1570</NoWarn>
 
     <!-- NuGet Package Metadata -->
     <PackageId>MicroResult</PackageId>
@@ -24,19 +25,15 @@
     <PublishReadyToRun>true</PublishReadyToRun>
   </PropertyGroup>
 
-  <!-- Optional ASP.NET Core dependency for HttpExtensions -->
-  <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
-    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+  <!-- Exclude test and example files from compilation -->
+  <ItemGroup>
+    <Compile Remove="MicroResult.Tests.cs" />
+    <Compile Remove="Examples.cs" />
   </ItemGroup>
 
-  <!-- Testing framework -->
-  <ItemGroup>
-    <PackageReference Include="xunit" Version="2.7.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.2" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.4">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+  <!-- ASP.NET Core dependency for HttpExtensions (net8.0 and net10.0 only) -->
+  <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
   </ItemGroup>
 
 </Project>

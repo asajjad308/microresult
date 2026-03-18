@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyDescriptionAttribute(("The smallest, fastest, AOT-safe Result type for modern .NET. Zero dependencies, z" +
     "ero allocations, perfect for Minimal APIs, Blazor, and microservices."))]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd6d063b2484105bd23fcb49739939d61061da3c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0822491a05446543956c6619b123466b7858249f")]
 [assembly: System.Reflection.AssemblyProductAttribute("MicroResult")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MicroResult")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace MicroResult;
 
@@ -81,7 +82,7 @@ public readonly struct Result<T>
     }
 
     /// <summary>
-    /// Chains operations that return Result<TResult>.
+    /// Chains operations that return Result{TResult}.
     /// </summary>
     public Result<TResult> Bind<TResult>(Func<T, Result<TResult>> func)
     {
