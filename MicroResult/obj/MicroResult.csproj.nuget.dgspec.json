@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lenovo\\Desktop\\nugets\\microresult\\MicroResult.csproj": {}
+    "C:\\Users\\Lenovo\\Desktop\\nugets\\MicroResult\\MicroResult.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lenovo\\Desktop\\nugets\\microresult\\MicroResult.csproj": {
-      "version": "1.0.0",
+    "C:\\Users\\Lenovo\\Desktop\\nugets\\MicroResult\\MicroResult.csproj": {
+      "version": "1.0.1",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\Desktop\\nugets\\microresult\\MicroResult.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\Desktop\\nugets\\MicroResult\\MicroResult.csproj",
         "projectName": "MicroResult",
-        "projectPath": "C:\\Users\\Lenovo\\Desktop\\nugets\\microresult\\MicroResult.csproj",
+        "projectPath": "C:\\Users\\Lenovo\\Desktop\\nugets\\MicroResult\\MicroResult.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\Desktop\\nugets\\microresult\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo\\Desktop\\nugets\\MicroResult\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
