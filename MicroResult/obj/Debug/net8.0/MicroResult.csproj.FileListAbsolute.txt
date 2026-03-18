@@ -1,0 +1,6 @@
+C:\Users\Lenovo\Desktop\nugets\microresult\obj\Debug\net8.0\MicroResult.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Desktop\nugets\microresult\obj\Debug\net8.0\MicroResult.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\Desktop\nugets\microresult\obj\Debug\net8.0\MicroResult.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Desktop\nugets\microresult\obj\Debug\net8.0\MicroResult.AssemblyInfo.cs
+C:\Users\Lenovo\Desktop\nugets\microresult\obj\Debug\net8.0\MicroResult.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Desktop\nugets\microresult\obj\Debug\net8.0\MicroResult.sourcelink.json
