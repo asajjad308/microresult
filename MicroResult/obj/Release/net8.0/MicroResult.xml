@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MicroResult</name>
+    </assembly>
+    <members>
+        <member name="T:MicroResult.Error">
+            <summary>
+            Represents an error with a code and message.
+            </summary>
+        </member>
+        <member name="P:MicroResult.Error.Code">
+            <summary>
+            Gets the machine-readable error code.
+            </summary>
+        </member>
+        <member name="P:MicroResult.Error.Message">
+            <summary>
+            Gets the human-readable error message.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Error.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new error value.
+            </summary>
+            <param name="code">The machine-readable error code.</param>
+            <param name="message">The human-readable error message.</param>
+        </member>
+        <member name="M:MicroResult.Error.ToString">
+            <summary>
+            Returns the error as a readable string.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Error.Equals(System.Object)">
+            <summary>
+            Determines whether this error equals another object.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Error.GetHashCode">
+            <summary>
+            Returns a hash code for this error.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Error.op_Equality(MicroResult.Error,MicroResult.Error)">
+            <summary>
+            Compares two errors for equality.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Error.op_Inequality(MicroResult.Error,MicroResult.Error)">
+            <summary>
+            Compares two errors for inequality.
+            </summary>
+        </member>
+        <member name="T:MicroResult.Result`1">
+            <summary>
+            A lightweight, zero-allocation Result type for functional error handling.
+            </summary>
+        </member>
+        <member name="P:MicroResult.Result`1.IsSuccess">
+            <summary>
+            Gets a value indicating whether the result represents success.
+            </summary>
+        </member>
+        <member name="P:MicroResult.Result`1.IsFailure">
+            <summary>
+            Gets a value indicating whether the result represents failure.
+            </summary>
+        </member>
+        <member name="P:MicroResult.Result`1.Value">
+            <summary>
+            Gets the successful value.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when the result is a failure.</exception>
+        </member>
+        <member name="P:MicroResult.Result`1.Error">
+            <summary>
+            Gets the error value.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">Thrown when the result is a success.</exception>
+        </member>
+        <member name="M:MicroResult.Result`1.Success(`0)">
+            <summary>
+            Creates a successful result with the given value.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Result`1.Failure(MicroResult.Error)">
+            <summary>
+            Creates a failed result with the given error.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Result`1.op_Implicit(`0)~MicroResult.Result{`0}">
+            <summary>
+            Implicit conversion from T to Result{T} (success).
+            </summary>
+        </member>
+        <member name="M:MicroResult.Result`1.op_Implicit(MicroResult.Error)~MicroResult.Result{`0}">
+            <summary>
+            Implicit conversion from Error to Result{T} (failure).
+            </summary>
+        </member>
+        <member name="M:MicroResult.Result`1.Match``1(System.Func{`0,``0},System.Func{MicroResult.Error,``0})">
+            <summary>
+            Matches on success or failure, returning a result of TResult type.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Result`1.Map``1(System.Func{`0,``0})">
+            <summary>
+            Transforms the value if success, preserves failure.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Result`1.Bind``1(System.Func{`0,MicroResult.Result{``0}})">
+            <summary>
+            Chains operations that return Result{TResult}.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Result`1.Ensure(System.Func{`0,System.Boolean},MicroResult.Error)">
+            <summary>
+            Applies a predicate check; if fails, returns the given error.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Result`1.Equals(System.Object)">
+            <summary>
+            Determines whether this result equals another object.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Result`1.GetHashCode">
+            <summary>
+            Returns a hash code for this result.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Result`1.op_Equality(MicroResult.Result{`0},MicroResult.Result{`0})">
+            <summary>
+            Compares two results for equality.
+            </summary>
+        </member>
+        <member name="M:MicroResult.Result`1.op_Inequality(MicroResult.Result{`0},MicroResult.Result{`0})">
+            <summary>
+            Compares two results for inequality.
+            </summary>
+        </member>
+        <member name="T:MicroResult.ResultExtensions">
+            <summary>
+            Extension methods for Result{T}.
+            </summary>
+        </member>
+        <member name="M:MicroResult.ResultExtensions.Tap``1(MicroResult.Result{``0},System.Action{``0})">
+            <summary>
+            Executes an action on the value if success, then returns the original result.
+            </summary>
+        </member>
+        <member name="M:MicroResult.ResultExtensions.OnFailure``1(MicroResult.Result{``0},System.Action{MicroResult.Error})">
+            <summary>
+            Executes an action on the error if failure, then returns the original result.
+            </summary>
+        </member>
+        <member name="M:MicroResult.ResultExtensions.Select``2(MicroResult.Result{``0},System.Func{``0,``1})">
+            <summary>
+            Transforms a Result{T} to a Result{TResult} using a transformation function.
+            </summary>
+        </member>
+        <member name="M:MicroResult.ResultExtensions.SelectMany``2(MicroResult.Result{``0},System.Func{``0,MicroResult.Result{``1}})">
+            <summary>
+            Chains Results together (monadic bind).
+            </summary>
+        </member>
+    </members>
+</doc>

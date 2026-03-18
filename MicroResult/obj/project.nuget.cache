@@ -1,13 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "9iuUi5NZVLs=",
+  "dgSpecHash": "rgqxft1b7L8=",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\Desktop\\nugets\\microresult\\MicroResult.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Lenovo\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\10.0.5\\microsoft.netcore.app.crossgen2.win-x64.10.0.5.nupkg.sha512",
-    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\8.0.25\\microsoft.netcore.app.crossgen2.win-x64.8.0.25.nupkg.sha512"
+    "C:\\Users\\Lenovo\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

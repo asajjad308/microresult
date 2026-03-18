@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("MicroResult Contributors")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("agicodes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyDescriptionAttribute(("The smallest, fastest, AOT-safe Result type for modern .NET. Zero dependencies, z" +
-    "ero allocations, perfect for Minimal APIs, Blazor, and microservices."))]
+[assembly: System.Reflection.AssemblyDescriptionAttribute(("Tiny zero-dependency Result{T} and Error structs for clear exception-free control" +
+    " flow in modern .NET applications."))]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a148e403b1510e8f7bad13a4831b0b148416a8d5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57bf1bdc1875a7b7a9933149f9fa9cdc42afa443")]
 [assembly: System.Reflection.AssemblyProductAttribute("MicroResult")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MicroResult")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

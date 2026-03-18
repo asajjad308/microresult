@@ -1,23 +1,53 @@
 # MicroResult
 
-The smallest, fastest, AOT-safe Result type for modern .NET. **Zero dependencies. Zero allocations.**
+MicroResult is a tiny library for returning either a successful value or an error without throwing exceptions in normal control flow.
 
-Perfect for Minimal APIs, Blazor, microservices, and any high-performance code paths.
+It is designed for modern .NET applications that want predictable flow, low overhead, and a minimal API surface.
 
 ## Features
 
 ✅ **Zero Dependencies** — Just add and use  
 ⚡ **Zero Allocations** — Readonly struct, stack-only  
 🚀 **AOT Friendly** — Native AOT compilation ready  
-🎯 **Minimal API** — Only essential methods (Match, Map, Bind, Ensure)  
+🎯 **Minimal API Surface** — Only essential methods (Match, Map, Bind, Ensure)  
 🔗 **Fluent Chaining** — Composable, functional error handling  
-✨ **Clean DX** — Implicit conversions + Match patterns  
-🌐 **ASP.NET Integration** — Seamless Minimal API support
+✨ **Clean DX** — Implicit conversions + Match patterns
 
 ## Installation
 
 ```bash
 dotnet add package MicroResult
+```
+
+## What It Does
+
+Instead of throwing exceptions for expected failures, MicroResult returns a value that is either:
+
+- a success containing `T`
+- a failure containing `Error`
+
+That makes business flow explicit and easy to compose.
+
+```csharp
+public Result<User> GetUser(Guid id)
+{
+    var user = db.Users.Find(id);
+
+    if (user is null)
+        return new Error("NotFound", "User not found");
+
+    return user;
+}
+```
+
+You then handle both outcomes deliberately:
+
+```csharp
+var result = GetUser(id);
+
+return result.Match(
+    user => Results.Ok(user),
+    error => Results.BadRequest(error));
 ```
 
 ## Quick Start
@@ -65,15 +95,15 @@ return result.Match(
 );
 ```
 
-### ASP.NET Minimal API
+### Why Chaining Helps
 
 ```csharp
-app.MapGet("/users/{id}", (Guid id, UserService service) =>
-{
-    var result = service.GetUser(id);
-    return result.ToHttpResult();
-});
+var result = GetUser(id)
+    .Bind(ValidateUser)
+    .Map(user => new UserDto(user));
 ```
+
+Each step only runs when the previous step succeeded. If any step returns an error, the chain stops and preserves that failure.
 
 ## Core API
 
@@ -122,23 +152,39 @@ public readonly struct Result<T>
 // Side effects
 public static Result<T> Tap<T>(this Result<T> result, Action<T> action);
 public static Result<T> OnFailure<T>(this Result<T> result, Action<Error> action);
-
-// LINQ-like (Select, SelectMany)
-public static Result<TResult> Select<T, TResult>(this Result<T> result, Func<T, TResult> selector);
-public static Result<TResult> SelectMany<T, TResult>(this Result<T> result, Func<T, Result<TResult>> selector);
 ```
 
-### ASP.NET Integration
+## Real-World Use Cases
 
 ```csharp
-// Standard: Success → Ok(value), Failure → BadRequest(error)
-public static IResult ToHttpResult<T>(this Result<T> result);
+// Validation
+return age >= 18
+    ? user
+    : new Error("InvalidAge", "Must be 18 or older");
+```
 
-// Custom handlers
-public static IResult ToHttpResult<T>(
-    this Result<T> result,
-    Func<T, IResult> onSuccess,
-    Func<Error, IResult> onFailure);
+```csharp
+// Database lookup
+return entity is null
+    ? new Error("NotFound", "Entity not found")
+    : entity;
+```
+
+```csharp
+// API response mapping
+return result.Match(
+    value => Results.Ok(value),
+    error => Results.BadRequest(error));
+```
+
+## Optional ASP.NET Core Integration
+
+The published package keeps the core library dependency-free.
+
+If you want a `ToHttpResult()` extension for Minimal APIs, add the optional `HttpExtensions.optional.cs` helper from the repository to your ASP.NET Core project and reference the required ASP.NET package there.
+
+```csharp
+return result.ToHttpResult();
 ```
 
 ## Examples
@@ -169,25 +215,6 @@ public Result<UserDto> CreateUser(CreateUserRequest req)
 }
 ```
 
-### Minimal API Handler
-
-```csharp
-app.MapPost("/users", async (CreateUserRequest req, UserService service) =>
-{
-    var result = await service.CreateUser(req);
-    
-    return result.ToHttpResult(
-        onSuccess: user => Results.Created($"/users/{user.Id}", user),
-        onFailure: error => error.Code switch
-        {
-            "Duplicate" => Results.Conflict(error),
-            "Unauthorized" => Results.Forbid(),
-            _ => Results.BadRequest(error)
-        }
-    );
-});
-```
-
 ## Performance Characteristics
 
 - **Value Type**: Stack allocation only, no GC pressure
@@ -210,13 +237,13 @@ app.MapPost("/users", async (CreateUserRequest req, UserService service) =>
 - No external dependencies
 - No magic
 
+## Feedback
+
+Issues and PRs are welcome on [GitHub](https://github.com/microresult/microresult).
+
 ## License
 
 MIT — Use freely in personal and commercial projects.
-
-## Contributing
-
-Issues and PRs welcome on [GitHub](https://github.com/microresult/microresult).
 
 ---
 

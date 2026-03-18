@@ -12,9 +12,20 @@ public readonly struct Result<T>
     private readonly Error _error;
     private readonly bool _isSuccess;
 
+    /// <summary>
+    /// Gets a value indicating whether the result represents success.
+    /// </summary>
     public bool IsSuccess => _isSuccess;
+
+    /// <summary>
+    /// Gets a value indicating whether the result represents failure.
+    /// </summary>
     public bool IsFailure => !_isSuccess;
 
+    /// <summary>
+    /// Gets the successful value.
+    /// </summary>
+    /// <exception cref="InvalidOperationException">Thrown when the result is a failure.</exception>
     public T Value
     {
         get
@@ -25,6 +36,10 @@ public readonly struct Result<T>
         }
     }
 
+    /// <summary>
+    /// Gets the error value.
+    /// </summary>
+    /// <exception cref="InvalidOperationException">Thrown when the result is a success.</exception>
     public Error Error
     {
         get
@@ -103,6 +118,9 @@ public readonly struct Result<T>
         return predicate(_value) ? this : Failure(error);
     }
 
+    /// <summary>
+    /// Determines whether this result equals another object.
+    /// </summary>
     public override bool Equals(object? obj) => obj is Result<T> result && Equals(result);
 
     private bool Equals(Result<T> other)
@@ -113,6 +131,9 @@ public readonly struct Result<T>
         return IsSuccess ? EqualityComparer<T>.Default.Equals(_value, other._value) : _error.Equals(other._error);
     }
 
+    /// <summary>
+    /// Returns a hash code for this result.
+    /// </summary>
     public override int GetHashCode()
     {
 #if NET6_0_OR_GREATER
@@ -132,6 +153,13 @@ public readonly struct Result<T>
 #endif
     }
 
+    /// <summary>
+    /// Compares two results for equality.
+    /// </summary>
     public static bool operator ==(Result<T> left, Result<T> right) => left.Equals(right);
+
+    /// <summary>
+    /// Compares two results for inequality.
+    /// </summary>
     public static bool operator !=(Result<T> left, Result<T> right) => !left.Equals(right);
 }

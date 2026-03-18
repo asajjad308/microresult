@@ -8,21 +8,26 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);CS1570</NoWarn>
 
-    <!-- NuGet Package Metadata -->
+    <!-- NuGet package metadata -->
+    <IsPackable>true</IsPackable>
     <PackageId>MicroResult</PackageId>
+    <Title>MicroResult</Title>
     <Version>1.0.0</Version>
-    <Authors>MicroResult Contributors</Authors>
-    <Description>The smallest, fastest, AOT-safe Result type for modern .NET. Zero dependencies, zero allocations, perfect for Minimal APIs, Blazor, and microservices.</Description>
-    <PackageTags>result functional error-handling monad aot minimalist</PackageTags>
+    <Authors>sajjadali;agicodes</Authors>
+    <Company>agicodes</Company>
+    <Description>Tiny zero-dependency Result{T} and Error structs for clear exception-free control flow in modern .NET applications.</Description>
+    <PackageDescription>Tiny zero-dependency Result{T} and Error structs for clear exception-free control flow in modern .NET applications.</PackageDescription>
+    <PackageTags>result;error-handling;functional;aot;minimal;dotnet</PackageTags>
     <PackageProjectUrl>https://github.com/microresult/microresult</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>Initial release with Result{T}, Error, Match, Map, Bind, Ensure, Tap, and OnFailure.</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/microresult/microresult</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    
-    <!-- Performance and AOT optimization -->
-    <TieredCompilation>true</TieredCompilation>
-    <PublishReadyToRun>true</PublishReadyToRun>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <!-- Exclude test, example, and optional HTTP extension files from compilation -->
@@ -31,6 +36,10 @@
     <Compile Remove="Examples.cs" />
     <Compile Remove="HttpExtensions.cs" />
     <Compile Remove="HttpExtensions.optional.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
