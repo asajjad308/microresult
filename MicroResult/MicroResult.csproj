@@ -12,18 +12,18 @@
     <IsPackable>true</IsPackable>
     <PackageId>MicroResult</PackageId>
     <Title>MicroResult</Title>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>sajjadali;agicodes</Authors>
     <Company>agicodes</Company>
     <Description>Tiny zero-dependency Result{T} and Error structs for clear exception-free control flow in modern .NET applications.</Description>
     <PackageDescription>Tiny zero-dependency Result{T} and Error structs for clear exception-free control flow in modern .NET applications.</PackageDescription>
     <PackageTags>result;error-handling;functional;aot;minimal;dotnet</PackageTags>
-    <PackageProjectUrl>https://github.com/microresult/microresult</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/asajjad308/microresult</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>Initial release with Result{T}, Error, Match, Map, Bind, Ensure, Tap, and OnFailure.</PackageReleaseNotes>
-    <RepositoryUrl>https://github.com/microresult/microresult</RepositoryUrl>
+    <PackageReleaseNotes>Update repository metadata, add MIT license and GitHub Actions workflow, and improve public README assets.</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/asajjad308/microresult</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>

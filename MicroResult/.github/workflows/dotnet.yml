@@ -1,0 +1,45 @@
+name: dotnet
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+
+      - name: Restore library
+        run: dotnet restore MicroResult.csproj
+
+      - name: Build library
+        run: dotnet build MicroResult.csproj --configuration Release --no-restore
+
+      - name: Pack library
+        run: dotnet pack MicroResult.csproj --configuration Release --no-build
+
+      - name: Restore test API
+        run: dotnet restore MicroResult.TestApi/MicroResult.TestApi.csproj
+
+      - name: Build test API
+        run: dotnet build MicroResult.TestApi/MicroResult.TestApi.csproj --configuration Release --no-restore
+
+      - name: Upload package artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: microresult-packages
+          path: |
+            bin/Release/*.nupkg
+            bin/Release/*.snupkg

@@ -1,5 +1,7 @@
 # MicroResult
 
+![MicroResult banner](https://raw.githubusercontent.com/asajjad308/microresult/main/assets/microresult-banner.svg)
+
 MicroResult is a tiny library for returning either a successful value or an error without throwing exceptions in normal control flow.
 
 It is designed for modern .NET applications that want predictable flow, low overhead, and a minimal API surface.
@@ -239,7 +241,7 @@ public Result<UserDto> CreateUser(CreateUserRequest req)
 
 ## Feedback
 
-Issues and PRs are welcome on [GitHub](https://github.com/microresult/microresult).
+Issues and PRs are welcome on [GitHub](https://github.com/asajjad308/microresult).
 
 ## License
 
